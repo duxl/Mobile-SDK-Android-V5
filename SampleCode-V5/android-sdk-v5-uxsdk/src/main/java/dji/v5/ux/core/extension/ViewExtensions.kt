@@ -175,7 +175,7 @@ var ImageView.imageDrawable: Drawable?
  * @param dialogClickListener
  */
 fun View.showAlertDialog(
-    @StyleRes dialogTheme: Int = R.style.Theme_AppCompat_Dialog,
+    @StyleRes dialogTheme: Int = dji.v5.core.R.style.Theme_AppCompat_Dialog,
     title: String? = getString(R.string.uxsdk_alert),
     icon: Drawable? = null,
     message: String? = null,
@@ -206,7 +206,7 @@ fun View.showAlertDialog(
  * @param dialogClickListener
  */
 fun View.showConfirmationDialog(
-    @StyleRes dialogTheme: Int = R.style.Theme_AppCompat_Dialog,
+    @StyleRes dialogTheme: Int = dji.v5.core.R.style.Theme_AppCompat_Dialog,
     title: String? = getString(R.string.uxsdk_alert),
     icon: Drawable? = null,
     message: String? = null,

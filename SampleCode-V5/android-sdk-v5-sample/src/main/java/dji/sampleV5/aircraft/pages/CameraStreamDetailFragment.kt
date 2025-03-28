@@ -279,7 +279,7 @@ class CameraStreamDetailFragment : DJIFragment() {
     private fun downloadYUVImage() {
         val selectedIndex = arrayOf(-1)
         val formatList = SUPPORT_YUV_FORMAT.keys.toTypedArray()
-        AlertDialog.Builder(requireContext(), R.style.Base_ThemeOverlay_AppCompat_Dialog_Alert)
+        AlertDialog.Builder(requireContext(), dji.v5.core.R.style.Base_ThemeOverlay_AppCompat_Dialog_Alert)
             .setIcon(android.R.drawable.ic_input_get)
             .setTitle(R.string.title_select_yuv_format)
             .setCancelable(true)

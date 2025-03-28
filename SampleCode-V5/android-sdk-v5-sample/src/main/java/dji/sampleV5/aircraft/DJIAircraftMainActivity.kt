@@ -1,6 +1,8 @@
 package dji.sampleV5.aircraft
 
+import android.util.Log
 import dji.v5.common.utils.GeoidManager
+import dji.v5.manager.diagnostic.DeviceStatusManager
 import dji.v5.ux.core.communication.DefaultGlobalPreferences
 import dji.v5.ux.core.communication.GlobalPreferencesManager
 import dji.v5.ux.core.util.UxSharedPreferencesUtil
@@ -24,9 +26,18 @@ class DJIAircraftMainActivity : DJIMainActivity() {
 
         enableDefaultLayout(DefaultLayoutActivity::class.java)
         enableWidgetList(WidgetsActivity::class.java)
+
+        // 注册成功，添加监听
+        test()
     }
 
     override fun prepareTestingToolsActivity() {
         enableTestingTools(AircraftTestingToolsActivity::class.java)
+    }
+
+    private fun test() {
+        DeviceStatusManager.getInstance().addDJIDeviceStatusChangeListener { _, to ->
+            Log.i("DJIAircraftMainActivity", "监听设备状态: statusCode=${to.statusCode()}, warningLevel=${to.warningLevel()}, description=${to.description()}")
+        }
     }
 }
